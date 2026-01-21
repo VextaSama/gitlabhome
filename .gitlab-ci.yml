@@ -1,0 +1,38 @@
+stages:
+  - test
+  - static-analysis
+  - build
+
+test:
+  stage: test
+  image: golang:1.16
+  script:
+    - echo "Running tests"
+    - go test ./... || echo "No tests found, skipping"
+  tags:
+    - my
+
+static-analysis:
+  stage: static-analysis
+  image: alpine:latest
+  script:
+    - echo "Static analysis stage"
+    - echo "Checking project structure"
+    - ls -la
+    - echo "Pretend we run linters here"
+  tags:
+    - my
+
+build:
+  stage: build
+  image: alpine:latest
+  script:
+    - echo "Build stage"
+    - mkdir -p build
+    - echo "Hello from CI pipeline" > build/result.txt
+    - cat build/result.txt
+  artifacts:
+    paths:
+      - build/result.txt
+  tags:
+    - my
