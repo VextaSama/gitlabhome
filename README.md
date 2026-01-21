@@ -40,6 +40,8 @@
  * файл gitlab-ci.yml для своего проекта или вставьте код в соответствующее поле в шаблоне;
  * скриншоты с успешно собранными сборками.
 
+https://github.com/VextaSama/gitlabhome/blob/main/.gitlab-ci.yml
+
 Как ни пытался заставить собираться докер, постоянно выходили ошибки с хостами разного рода. 
 
 ![alt text](https://github.com/VextaSama/gitlabhome/blob/main/fail2.png)
